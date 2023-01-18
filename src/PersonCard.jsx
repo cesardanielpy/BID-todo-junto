@@ -14,14 +14,14 @@ class PersonCard extends Component {
 
     render() { 
 
-        const {lastName, firstName, hairColor} = this.props;
+        const {lastName, firstName, hairColor,cumple} = this.props;
         const { age } = this.state;
         return (
             <>
             <h1>{lastName} , {firstName}</h1>
             <p>Age: {age}</p>
             <p>Hair Color: {hairColor}</p>
-            <button onClick={ () => this.incrementAge() }>Birthday Button for Jane Doe</button>
+            <button onClick={ () => this.incrementAge() }>{cumple}</button>
             </>
         )
     }
