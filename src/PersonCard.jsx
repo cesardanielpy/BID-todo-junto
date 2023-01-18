@@ -1,16 +1,27 @@
 import { Component } from "react";
 
 class PersonCard extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            age: props.age
+        };
+    }
+
+    incrementAge = () => {
+        this.setState({age: this.state.age + 1});
+    }
 
     render() { 
 
-        const {lastName, firstName, age, hairColor,  incrementAge} = this.props;
+        const {lastName, firstName, hairColor} = this.props;
+        const { age } = this.state;
         return (
             <>
             <h1>{lastName} , {firstName}</h1>
             <p>Age: {age}</p>
             <p>Hair Color: {hairColor}</p>
-            <button onClick={() => incrementAge()}>Birthday Button for Jane Doe</button>
+            <button onClick={ () => this.incrementAge() }>Birthday Button for Jane Doe</button>
             </>
         )
     }
